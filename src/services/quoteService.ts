@@ -14,7 +14,7 @@ const genAI = new GoogleGenAI({ apiKey: API_KEY });
  */
 export async function fetchQuote(): Promise<{ quote: string; author?: string }> {
     try {
-        const prompt = 'Give me a random quote that is either:dark but playfully humorous about AI domination,or an uplifting and motivational quote,or simply any thought-provoking quote.Include the quote in quotation marks and the author afterward."';
+        const prompt = 'Give me a random quote that is either:dark but playfully humorous about AI domination,or an uplifting and motivational quote(from real world),or simply any thought-provoking quote(also from real world).Include the quote in quotation marks and the author afterward."';
         const result = await genAI.models.generateContent({
             model: "gemini-2.0-flash",
             contents: prompt,
